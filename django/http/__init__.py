@@ -550,7 +550,7 @@ def parse_cookie(cookie):
         try:
             c = SimpleCookie()
             c.load(cookie)
-        except Cookie.CookieError:
+        except AttributeError, Cookie.CookieError:
             # Invalid cookie
             return {}
     else:
